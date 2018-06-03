@@ -1,0 +1,12 @@
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 10pt;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+}
