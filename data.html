@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+		<meta charset="UTF-8">
+        <style>
+            /* Maybe move into a css file?*/
+            body {
+              /*max-width: 750px;
+              margin: 0 auto;*/
+              font-size: 17pt;
+              text-align: justify;
+              text-justify: inter-word;
+              hyphens: auto;
+              -webkit-hyphens: auto;
+              -moz-hyphens: auto;
+              -ms-hyphens: auto;
+              -o-hyphens: auto;
+            /*  padding-bottom: 3%;*/
+            }
+
+            p {
+                /*font-family:helvetica;*/
+                font-family:inherit;
+                font-size:17px;
+                /*line-height:20px;*/
+            }
+            li {
+                font-family:helvetica;
+                font-size:17px;
+              /*line-height:20px;*/
+                margin: 5px 0;
+            }
+            ul {
+                margin-top:-2%;
+            }
+            a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <center><h2>Datasets for Fair Machine Learning Research</h2></center>
+        <hr>
+        <p>Note: The original page is <a href='https://uwyomachinelearning.github.io/'>here</a>, but it's not being maintained as of now. I've just cloned the page to make some fixes to the data available. </p>
+        <hr>
+
+        <p><font style="font-size:15pt"><b>
+		<a href="https://github.com/aokray/aokray.github.io/raw/master/creditcarddefault.zip">
+		Credit Card Default Data Set</a>
+		</b></font></p>
+
+        <p>Contains 20,000 individuals described by
+		  23 attributes (e.g., gender, age).
+		  We have removed individuals with missing attributes and reduced sample size to 20,000 from 30,000. </p>
+
+		<p>Label is Default Payment (1:yes; 0:no).</p>
+
+    	<p>Sensitive feature is Education Degree.
+		We have binarized the original value (1:graduate school; 2:university;
+		  3:high school; 4:others) into (1:lower education) if it is <=3
+		  and (0:higher education) otherwise (as done in
+		  <a target="_blank" href="https://papers.nips.cc/paper/8294-the-price-of-fair-pca-one-extra-dimension.pdf">
+			  The Price of Fair PCA: One Extra dimension</a>)</p>
+
+		<p><i>creditcarddefault.csv</i> is the data set; each row is an individual;
+		the 24th column is label; the 3th column is sensitive feature.</p>
+
+		<p><i>creditdefault_index.csv</i> contains 50 random shuffles of individual indicies;
+		each row is a random shuffle.</p>
+
+		<!-- <p><i>credit_result.pdf</i> contains results of several basic fair classifiers averaged over the 50 random trials.</p> -->
+
+		<p><a href="https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients">Data Source</a></p>
+
+		<hr>
+        <p><font style="font-size:15pt"><b>
+		<a href="https://github.com/uwyomachinelearning/datasets/raw/master/communitycrime.zip">Communities
+		and Crime Data Set</a>	</b></font></p>
+
+        <p>Contains 1,993 communities described by
+		  101 attributes (e.g., population, household size).</p>
+
+		<p>Label is Crime Rate (1:high; 0:low).</p>
+
+    	<p>Sensitive feature is Percentage of African American Residents.
+		We have binarized the original value into (1:high) if it is
+		>=50% and (0:low) otherwise. </p>
+
+		<p><i>crimecommunity.csv</i> is the data set; each row is a community;
+		the 101th column is label; the 1th column is sensitive feature.</p>
+
+		<p><i>crimecommunity_index.csv</i> contains 50 random shuffles of community indicies.</p>
+
+		<!--<p><i>crime_result.pdf</i> contains results of several basic fair classifiers averaged over the 50 random trials.</p>-->
+
+		<p><a href="http://archive.ics.uci.edu/ml/datasets/communities+and+crime">Data Source</a></p>
+
+		<hr>
+        <p><font style="font-size:15pt"><b>
+		<a href="https://github.com/uwyomachinelearning/datasets/raw/master/compas.zip">COMPAS
+		Data Set</a></b></font></p>
+
+        <p>Contains 16,000 defendents described by
+		  16 attributes (e.g., sex, ethnic).</p>
+
+		<p>Label is Risk of Recidivism (1:high; 0:low).</p>
+
+    	<p>Sensitive feature is Race (1:black; 0:white).</p>
+
+		<p><i>compas.csv</i> is the data set; each row is a defendant;
+		the 16th column is label; the 15th column is sensitive feature.</p>
+
+		<p><i>compas_index.csv</i> contains 50 random shuffles of defendant indicies.</p>
+
+		<!--<p><i>compass_result.pdf</i> contains results of several basic fair classifiers averaged over the 50 random trials.</p>-->
+
+		<p><a href="https://www.kaggle.com/danofer/compass">Data Source</a></p>
+
+		<hr>
+		<p><font style="font-size:10pt;"><i>This webpage is maintained by Austin Okray (arokray@gmail.com).</i></font></p>
+    </body>
+
+</html>
