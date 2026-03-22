@@ -75,7 +75,7 @@ ul#menu li {
     }
 
     .h1-splash-style{
-      font-size: 5.5vmax;
+      font-size: 350%;
     }
 }
 @media (min-width:1025px) {
@@ -96,7 +96,8 @@ ul#menu li {
   }
 
   .splash-link-style{
-    font-size: 2em;
+    /* font-size: 2em; */
+    font-size: 170%;
     color: darkslategray;
     text-decoration: none;
   }
@@ -111,7 +112,8 @@ ul#menu li {
   }
   
   .h1-splash-style{
-    font-size: 4vmax;
+    /* font-size: 4vmax; */
+    font-size: 500%;
   }
 
 }
