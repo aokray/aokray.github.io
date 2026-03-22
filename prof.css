@@ -1,5 +1,10 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
-  max-width: 700px;
+  max-width: 80%;
   margin: 0 auto;
   font-size: 10pt;
   text-align: justify;
@@ -10,6 +15,9 @@ body {
   -ms-hyphens: auto;
   -o-hyphens: auto;
   padding-bottom: 3%;
+  background-color: rgb(231, 231, 231);
+  /* background-image: linear-gradient(#e0e0e0 0%, white 52.08%); */
+  height: 100%;
 }
 
 #pic {
@@ -32,4 +40,78 @@ ul#menu li {
     display: inline-block;
     margin-right: 5px;
     /* Other styles here */
+}
+
+
+@media (min-width:320px)  {
+    .logo-position{
+      display: flex;
+      position: relative;
+      top: 50%;
+      left: 40%;
+      transform: translate(-50%,-50%);
+    }
+
+    .logo-text-position {
+      display: block flex;
+      top: 40%;
+      left: 5%;
+      position: relative;
+    }
+
+    .splash-link-style{
+      font-size: 1.5em;
+      color: darkslategray;
+      text-decoration: none;
+    }
+    
+    .menu-link-style{
+      font-size: 1.3vmax;
+      color: darkslategray;
+      text-decoration: none;
+      flex: 1;
+      margin: 0 10% 0 10%;
+      flex-flow: row nowrap;
+    }
+
+    .h1-splash-style{
+      font-size: 5.5vmax;
+    }
+}
+@media (min-width:1025px) {
+  .logo-position{
+    display: flex;
+    position: relative;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+  }
+
+  .logo-text-position {
+    display: block flex;
+    top: 40%;
+    left: 15%;
+    position: relative;
+  }
+
+  .splash-link-style{
+    font-size: 2em;
+    color: darkslategray;
+    text-decoration: none;
+  }
+  
+  .menu-link-style{
+    font-size: 1.3vmax;
+    color: darkslategray;
+    text-decoration: none;
+    flex: 1;
+    margin: 0 10% 0 10%;
+    flex-flow: row nowrap;
+  }
+  
+  .h1-splash-style{
+    font-size: 4vmax;
+  }
+
 }
