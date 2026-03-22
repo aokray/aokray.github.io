@@ -6,7 +6,7 @@ html {
 body {
   max-width: 80%;
   margin: 0 auto;
-  font-size: 10pt;
+  /* font-size: 10pt; */
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
@@ -66,11 +66,11 @@ ul#menu li {
     }
     
     .menu-link-style{
-      font-size: 1.3vmax;
+      font-size: 160%;
       color: darkslategray;
       text-decoration: none;
       flex: 1;
-      margin: 0 10% 0 10%;
+      margin: 0 5% 0 5%;
       flex-flow: row nowrap;
     }
 

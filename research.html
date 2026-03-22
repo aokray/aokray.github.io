@@ -146,7 +146,7 @@
             where constraints need to be frequently added or removed, making traditional CO solvers infeasible. Additionally, many of the required constraints for the scheduling are extremely challenging to form as a mathematical constraint,
             making NCO even more attractive since constraints in NCO do not need to be set up as a mathematical equation to incorporate.
             <br/>
-            <strong>Open the dropdown below to see details of the tooling and methods used in the duration of the research.</strong>
+            <strong>Open the dropdown below to see additional details of the research.</strong>
         </p>
         <button type="button", id="nco_dropdown" name="nco_dropdown" style="border: none; background-color: transparent; outline: none; font-size: 250%;">+</button>
         <div id="nco" style="display:none;">
@@ -191,7 +191,7 @@
             existing model. To address this, we utilized statistical techniques to determine if performance differences between models are statistically significant or not. 
             These tests were performed on the overall results and the by-category results, and across models that may have differing categories.
             <br/>
-            <strong>Open the dropdown below to see details of the tooling and methods used in the duration of the research.</strong>
+            <strong>Open the dropdown below to see additional details of the research.</strong>
         </p>
         
         <button type="button", id="sst_dropdown" name="sst_dropdown" style="border: none; background-color: transparent; outline: none; font-size: 250%;">+</button>
@@ -205,17 +205,15 @@
                     <li>Does model performance differ when changes are made to the model or dataset?</li>
                 </ol>
                 
-                To achieve this, it's surprisingly trivial - by calculating the predictions ahead of time, you can calculate which instances the model predicted correctly and incorrectly.
-                This makes the sample space for bootstrapping binary values, which allow for a variety of statistics/metrics to be calculated (e.g., accuracy), retuning the 
-                distribution for the true population's statistic/metric value. Statistical significance testing is then trivial, which can then provide evidence of model performance differences.
-                This same procedure applies for the by-category bootstrapping.
+                Acheiving the first goal is a fairly straightforward application of the bootstrapping algorithm (see below for a demonstration) using each model's results vs the associated ground truths,
+                which allows us to collect evidence if one model is better at a statistically significant level or not. This sketch works for both the overall and by-category bootstrapping tests. 
             </p>
             
             <p>
                 We were also interested in evaluating models when new categories were added to see if a small performance change between model versions was statistically significant or not.
-                If evidence was found that a performance dip was statistically significant, the model could be retrained or (slightly) redesigned to ensure important categories were never underperforming
-                due to new categories being included in the dataset. When performance improvements wre statistically significant, it was often because of wise design choices or the addition or more data.
-                Alternatively, if performance changes were not statistically significant, then the model would likely perform the same as before, but with the addition of a new category.
+                If evidence was found that a performance dip was statistically significant, the model could be retrained or redesigned to ensure important categories were never underperforming
+                due to new categories being included in the dataset. When performance improvements were statistically significant, it was often because of wise design choices, or simply the addition or more data.
+                Alternatively, if performance changes were not statistically significant, then the model could be expected to perform the same as before but with the addition of a new category.
             </p>
             
             <span style="display: flex; justify-content: center;">
@@ -231,10 +229,7 @@
                 </p>
             </span>
             <p>
-                For an excellent introduction and discussion to bootstrapping and permutation testing, see <a href="https://doi.org/10.1201/9780429246593">An Introduction to the Bootstrap</a>.
-            </p>
-            <p>
-                For another interesting method, see <a href="https://arxiv.org/pdf/1705.01788">E. del Barrio et al</a>'s Almost Stochastic Order method.
+                For an excellent introduction and discussion to bootstrapping (and permutation testing, which was also used at stages), see <a href="https://doi.org/10.1201/9780429246593">An Introduction to the Bootstrap</a>.
             </p>
 
         </div>
@@ -249,7 +244,7 @@
             we developed a simple sliding window technique that utilized various summary statistics to raise an "alarm bell" when new data a model is encountering may be OOD,
             warning users that predictions may be unreliable, and that model retraining may be merited.
             <br/>
-            <strong>Open the dropdown below to see details of the tooling and methods used in the duration of the research.</strong>
+            <strong>Open the dropdown below to see additional details of the research.</strong>
         </p>
         
         <button type="button", id="ood_dropdown" name="ood_dropdown" style="border: none; background-color: transparent; outline: none; font-size: 250%;">+</button>
@@ -269,8 +264,8 @@
             <p>
                 To address these requirements, we utilized some well researched OD and OOD methods and modified them appropriately to function in sliding windows.
                 This allowed not just for fast OOD detection, but opened the possibility of <i>streaming</i> OOD detection.
-                These methods returned an OOD score, and with some reasonable tuning methods, we found a threshold where OOD data alarms would begin to ring. 
-                This score was also interpretable, as it ranged from [0, &infin;] and we reported number of windows whose scores broke the threshold in a row. This also
+                These methods returned an OOD score, and with some reasonable tuning methods, we found a threshold value that raised almost no false positives at the cost of a few false negatives. 
+                This score was also interpretable, as it ranged from [0, &infin;] and users could compare scores to the threshold value and previous scores for context. This also
                 permitted easy visualization, and plots were created that allowed for non-technical individuals to see how in-distribution or out-of-distribution
                 new data was compared to the training data.
             </p>
